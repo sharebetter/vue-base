@@ -1,0 +1,85 @@
+.ft-22{font-size: 22px}
+.ft-24{font-size: 24px}
+.ft-26{font-size: 26px}
+.ft-28{font-size: 28px}
+.ft-30{font-size: 30px}
+.ft-32{font-size: 32px}
+.ft-34{font-size: 34px}
+.ft-36{font-size: 36px}
+.ft-38{font-size: 38px}
+.ft-40{font-size: 40px}
+.ft-44{font-size: 44px}
+.ft-48{font-size: 48px}
+
+.ft-w{
+    font-weight: bold;
+}
+
+.pd-20{padding: 20px;}
+.pd-30{padding: 30px;}
+.pt-20{padding-top: 20px;}
+.pl-20{padding-left: 20px;}
+.pr-20{padding-right: 20px;}
+.pb-20{padding-bottom: 20px;}
+.pt-30{padding-top: 30px;}
+.pl-30{padding-left: 30px;}
+.pr-30{padding-right: 30px;}
+.pb-30{padding-bottom: 30px;}
+
+.c-white{
+    color: white;
+}
+.c-black{
+  color: #333;
+}
+.c-yellow{
+  color: #FFE403;
+}
+.c-blue{
+    color: #00AAFF;
+  }
+.c-gray{
+  color: #808080;
+}
+.c-red{
+  color: #f15046;
+}
+.c-orange{
+    color:#FA531B;
+}
+.c-green{
+    color: #37c34b;
+}
+.c-orange-light{
+    color: #f8b551;
+}
+.c-gold{
+    color:#ffae29;
+}
+
+.fr{
+    float: right;
+}
+*{
+  box-sizing: border-box;
+}
+.box-shadow{
+    -webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+    -o-box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+    -ms-box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.2);
+  }
+  .divider-no-border{
+    height: 20px;
+    display: block;
+    clear: both;
+    width: 100%;
+    background-color: #f5f5f5;
+  }
+  .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+  .xz-ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
