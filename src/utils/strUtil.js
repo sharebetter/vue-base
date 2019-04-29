@@ -1,5 +1,10 @@
 import Vue from 'vue'
-const dayjs = require('dayjs')
+import dayjs from 'dayjs'
+import RelativeTime from 'dayjs/plugin/relativeTime'
+import 'dayjs/locale/zh-cn'
+dayjs.locale('zh-cn') // 设置语言
+dayjs.extend(RelativeTime) // 使用插件
+
 Vue.prototype.$day = dayjs
 
 export function strUtilInit () {
@@ -9,6 +14,22 @@ export function strUtilInit () {
     Vue.filter('moment', function (value, formatString) {
         formatString = formatString || 'YYYY-MM-DD HH:mm:ss';
         return dayjs(value).format(formatString);
+    })
+    Vue.filter('toNow', function (value, formatString) {
+        formatString = formatString || 'YYYY-MM-DD';
+        return dayjs().diff(value, 'day') > 14 ? dayjs(value).format(formatString) : dayjs().from(value)
+    })
+    Vue.filter('hello', function (nickName) {
+        let hour = dayjs().hour()
+        let helloTip = ''
+        if (hour >= 18) {
+            helloTip = '晚上好！ '
+        } else if (hour >= 12) {
+            helloTip = '下午好！ '
+        } else {
+            helloTip = '早上好！ '
+        }
+        return helloTip + nickName
     })
     Vue.filter('name', function (name, str = '*') {
         if (!name) {

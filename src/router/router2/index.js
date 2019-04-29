@@ -4,5 +4,9 @@ export default [
         name: 'about',
         component: () => import(/* webpackChunkName: "About" */ '@/views/About.vue'),
         meta: { keepAlive: true }
+    },
+    {
+        path: '/',
+        redirect: '/About'
     }
 ]

@@ -14,11 +14,15 @@
     transition: all .4s;
 }
 .dialog-enter,.dialog-leave-active {
-    transform: scale(.5);
+    transform: translate3d(0, -100px, 0) scale(.9);
     opacity: 0;
 }
-
-
+.slide-enter-active,.slide-leave-active {
+  transition: all .7s;
+}
+.slide-enter,.slide-leave-active {
+  opacity: 0;
+}
 
 @keyframes animBig {
     0% {
@@ -30,4 +34,31 @@
     100% {
       transform: scale(1);
     }
+}
+
+.anim {
+    -webkit-animation: tranColor 2s infinite;
+    animation: tranColor 2s infinite;
+  }
+  @-webkit-keyframes tranColor {
+  from,
+  50%,
+  to {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: .5;
+  }
+}
+@keyframes tranColor {
+  from,
+  50%,
+  to {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: .5;
+  }
 }

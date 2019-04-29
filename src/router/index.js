@@ -19,13 +19,33 @@ routeContext.keys().forEach(route => {
 
 const router = new Router({
     mode: 'history',
-    base: process.env.NODE_ENV === 'development' ? '' : '/test/',
+    // base: process.env.NODE_ENV === 'production' ? '/jiajia/' : '',
     routes: routes,
     scrollBehavior (to, from, savedPosition) {
         return { x: 0, y: 0 }
     }
 })
-
+router.beforeEach((to, from, next) => {
+    if (to.meta.title) document.title = `vuecli-${to.meta.title}`
+    // 百度统计
+    // if (to.path) {
+    //     window._hmt.push(['_trackPageview', `--${to.name}--完整路径=${to.fullPath}`]);
+    // }
+	next()
+})
+// 微信签证
+// router.afterEach(to => {
+//     // 微信验签，ios只需验证一次即可
+//     let url = `${global.base}jiajia${to.fullPath}`
+//     if (checkVersion().ios) {
+//         if (!global.isConfig) {
+//             wxConfig(location.href)
+//         }
+//     } else {
+//         wxConfig(url)
+//     }
+//     global.isConfig = true
+// })
 const options = {
     duration: '.3', // 转场动画时长，默认为0.3，单位秒
     firstEntryDisable: false, // 值为true时禁用首次进入应用时的渐现动画，默认为false
