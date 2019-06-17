@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import vueg from 'vueg'
+import {checkVersion} from '@utils/checkVersion.js';
+import {wxConfig} from '../service/wxService.js'
 import 'vueg/css/transition-min.css'
 /* eslint-disable */
 Vue.use(Router)
