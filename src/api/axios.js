@@ -22,10 +22,10 @@ axios.interceptors.request.use((config) => {
 // 添加一个响应拦截器
 axios.interceptors.response.use((response) => {
   store.commit('setLoadingStatus', false)
-  if (response.data.resultCode===0) {
+  if (response.data.resultCode===0 || response.data.resultCode==='-1000') {
     Toast.fail(response.data.resultMsg);
   }
-  return response.data
+  return response.data.resultBody
 }, (error) => {
   store.commit('setLoadingStatus', false)
   return Promise.reject(error);
