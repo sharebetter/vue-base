@@ -1,6 +1,8 @@
 .DS_Store
 node_modules
 /dist
+/epidemic-platform
+/epidemic-platform.*
 
 # local env files
 .env.local
